@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "1f1063bf51ab5285",
+        "id": "5f7654b50678effa",
         "type": "tabs",
         "children": [
           {
-            "id": "35a41c0c2ea614ba",
+            "id": "8216baa37d91a4ec",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -24,11 +24,11 @@
         ]
       },
       {
-        "id": "c9b85d55e56e8d91",
+        "id": "7b7f1165ccd3f927",
         "type": "tabs",
         "children": [
           {
-            "id": "e3fe792611588bc7",
+            "id": "35a41c0c2ea614ba",
             "type": "leaf",
             "state": {
               "type": "graph",
@@ -192,9 +192,17 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "e3fe792611588bc7",
+  "active": "8216baa37d91a4ec",
   "lastOpenFiles": [
     "Tercer-Año/Economía/1.Economia.md",
+    "Tercer-Año/Economía/Incubadoras.md",
+    "Tercer-Año/Economía/Aceleradoras.md",
+    "Sin título.md",
+    "Tercer-Año/Economía/5.Plan de Negocio.md",
+    "Tercer-Año/Economía/4. Canvas Model.md",
+    "Tercer-Año/Economía/3.Contexto de Negocio.md",
+    "Tercer-Año/Economía/2.Planeamiento Estrategico.md",
+    "Sin nombre",
     "Tercer-Año/Introducción al Diseño Lógico/Clase 1.md",
     "Tercer-Año/Introducción al Diseño Lógico/Clase 2.md",
     "Tercer-Año/Introducción al Diseño Lógico/Clase 1/image.png",
@@ -211,12 +219,7 @@
     "Tercer-Año/Matematica D",
     "Tercer-Año/Introducción al Diseño Lógico/Clase 1",
     "Tercer-Año/Introducción al Diseño Lógico",
-    "Tercer-Año/Economía/5.Plan de Negocio.md",
-    "Tercer-Año/Economía/3.Contexto de Negocio.md",
-    "Tercer-Año/Economía/4. Canvas Model.md",
-    "Tercer-Año/Economía/2.Planeamiento Estrategico.md",
     "Tercer-Año/Economía",
-    "Tercer-Año",
     "Bienvenido.md"
   ]
 }
