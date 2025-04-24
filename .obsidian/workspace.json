@@ -97,12 +97,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tercer-Año/Economía/Planeamiento Estrategico.md",
+                "file": "Tercer-Año/Economía/1.Economia.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Planeamiento Estrategico"
+              "title": "1.Economia"
             }
           }
         ],
@@ -263,8 +263,8 @@
   },
   "active": "a05948d21aa8d453",
   "lastOpenFiles": [
-    "Token.md",
     "Tercer-Año/Economía/Planeamiento Estrategico.md",
+    "Token.md",
     "Tercer-Año/Economía/5.Plan de Negocio.md",
     "Tercer-Año/Economía/4. Canvas Model.md",
     "Tercer-Año/Economía/Modelo de Negocio.md",
