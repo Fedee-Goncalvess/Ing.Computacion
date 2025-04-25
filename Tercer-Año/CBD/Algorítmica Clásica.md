@@ -28,4 +28,8 @@ Cada archivo detalle contiene información que genera modificaciones sobre la in
 ### Corte de Control
 Este algoritmo permite presentar la información de un archivo en forma organizada de acuerdo a la estructura del archivo origen.
 
-**Ejemplo**: Se deben contabilizar los hogares de bajos recursos en el territorio nacional. Cada registro contiene información de provincia, localidad, barrio y cantidad de hogares. La totalización debe realizarse por localidad y provincia.
+**Ejemplo**: 
+	Se deben contabilizar los hogares de bajos recursos en el territorio nacional. Cada registro contiene información de provincia, localidad, barrio y cantidad de hogares. La totalización debe realizarse por localidad y provincia.
+
+[Algoritmo de Corte de Control]
+

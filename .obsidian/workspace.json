@@ -48,6 +48,20 @@
               "icon": "lucide-file",
               "title": "Algorítmica Clásica"
             }
+          },
+          {
+            "id": "e9da8e433865e5ed",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Algoritmo de Corte de Control.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Algoritmo de Corte de Control"
+            }
           }
         ],
         "currentTab": 2
@@ -107,8 +121,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 310.5,
-    "collapsed": true
+    "width": 310.5
   },
   "right": {
     "id": "14dde3a46ac89568",
@@ -209,8 +222,9 @@
   },
   "active": "dae318ecbcd328a9",
   "lastOpenFiles": [
-    "Tercer-Año/CBD/Archivos (Pascal).md",
+    "Algoritmo de Corte de Control.md",
     "Tercer-Año/CBD/Algorítmica Clásica.md",
+    "Tercer-Año/CBD/Archivos (Pascal).md",
     "Tercer-Año/Economía/Análisis del Contexto de Negocio.md",
     "Tercer-Año/Economía/5.Plan de Negocio.md",
     "Tercer-Año/Economía/4. Canvas Model.md",
