@@ -29,7 +29,7 @@ Var
 
 ## Procedure
 ### Explicación
-Procedimiento para leer del archivo con corte de control
+Procedimiento para leer el registro del archivo con corte de control
 Si no es EOF -> Leer
 Es EOF -> Corte de Control
 ### Código
@@ -62,27 +62,32 @@ Begin
 
 ## Primer While
 ### Explicación
+Una vez que se tiene el primer registro, se comienza a leer de forma ordenada primero por provincia, evaluando que el código de provincia no sea valorAlto. Esto indicaría que se llegó al final del archivo y no se debe procesar más.
+
+De manera auxiliar se guarda el código actual de provincia, y se inicializa un contador de votos de provincia y entra al segundo while.
 ### Código
 ```pascal
 
-	While (reg .codProv <> valorAlto) do begin
-		codProvAct:=reg.codProv;
-		votosProvincia:=0;
-		writeLn('Provincia ', codProvAct);
-		{Segundo While}
-		{-------------}
-		{Segundo While}
-		writeLn(‘Hogares Plan Help Pcia: ', hogProvincia )
-	end;
-	Close(archivo); 
-	WriteLn; 
-	Write('Oprima tecla de ingreso para finalizar...'); 
-	ReadLn 
-end.
+While (reg .codProv <> valorAlto) do begin
+	codProvAct:=reg.codProv;
+	votosProvincia:=0;
+	writeLn('Provincia ', codProvAct);
+	{Segundo While}
+	{-------------}
+	{Segundo While}
+	writeLn(‘Hogares Plan Help Pcia: ', hogProvincia )
+end;
 ```
 
 ## Segundo While
 ### Explicación
+Se comienza a procesar la provincia mientras el código actual de provincia, y el leído, sean iguales. 
+
+Se guarda de forma auxiliar el código de localidad y se comienza un contador de **hogares por localidad**
+
+En el tercer while procesa cada localidad, y al final suma todos los hogares de cada localidad para obtener los hogares de cada provincia.
+
+**Corta ejecución al cambiar de provincia**
 ### Código
 ```pascal
 while (reg.codProv=codProvAct) do begin 
@@ -100,6 +105,7 @@ end;
 
 ## Tercer While
 ### Explicación
+Una vez en una provincia, y en una localidad, se lee ca
 ### Código
 ```pascal
 while (reg.codProv=codProvAct) and (reg. codLoc=codLocAct) do begin {corta la ejecución cuando cambia pcia o la localidad}
