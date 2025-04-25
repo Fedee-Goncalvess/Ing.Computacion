@@ -1,4 +1,4 @@
-Permite presentar información de un [[Archivos (Pascal)|archivo]]
+Permite presentar información de un [[Archivos (Pascal)|archivo]] en forma organizada de acuerdo a la estructura del archivo origen.
 --
 # Resumen
 1. Se inicializa la asignación y apertura de archivo
