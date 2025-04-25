@@ -1,8 +1,43 @@
+# Desarrollo del código
 
+## Type
 ```pascal
+Type
+	const valorAlto = 1000000;
+	RegistroHogares = Record
+		Codigo_prov: integer;
+		Codigo_localidad: integer;
+		Barrio: integer;
+		Cantidad: integer;
+	end;
+	tArchivo = File of RegistroHogares
 ```
 
-# Algoritmo 
+## Var
+```pascal
+Var
+	archivo: tArchivo;
+	hogProvincia, hogLocalidad, cod_provincia,cod_localidad:integer;
+	reg: RegistroHogares;
+
+```
+
+## Procedure
+```pascal
+procedure leer(var archivo: tArchivo; var dato: RegistroHogares);
+begin
+	if (not(EOF(archivo))) then
+		read (archivo, dato)
+	else
+		dato.Codigo_prov := valoralto;
+end;
+```
+
+```pascal
+
+```
+
+# Algoritmo Completo
 ```pascal
 Program hogaresPlanHelp
 
