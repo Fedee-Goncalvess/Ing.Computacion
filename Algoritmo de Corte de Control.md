@@ -1,4 +1,11 @@
+# Resumen
+	Se inicializa la asignación y apertura de archivo, se lee registro a registro. Se mantiene un orden mediante whiles con condiciones manteniendo en auxiliares atributos de cada registro. Ejemplo: 
+	Se lee 'Buenos Aires' se procesa todo Buenos Aires. 
+	Se guarda 'La Plata', luego se guarda 'City Bell'.
+	Se contabiliza los hogares de City Bell.
+	Si en una próxima lectura se lee 'Villa Elisa' actualiza los atributos auxiliares y procesa Villa Elisa contabilizando los hogares de Villa Elisa. 
 # Desarrollo del código
+
 
 ## Type
 ### Explicación
@@ -105,7 +112,8 @@ end;
 
 ## Tercer While
 ### Explicación
-Una vez en una provincia, y en una localidad, se lee ca
+Una vez en una provincia, y en una localidad, primero se suma los hogares de una misma localidad, y luego se lee el siguiente registro. 
+Si este registro sigue siendo de la misma provincia, y localidad, se sigue sumando. Caso contrario corte de control.
 ### Código
 ```pascal
 while (reg.codProv=codProvAct) and (reg. codLoc=codLocAct) do begin {corta la ejecución cuando cambia pcia o la localidad}
@@ -113,6 +121,19 @@ while (reg.codProv=codProvAct) and (reg. codLoc=codLocAct) do begin {corta la ej
 	Leer(archivo, reg)
 end;
 ```
+
+## Último Bloque
+### Explicación
+Se cierra el archivo y se termina el programa.
+### Código
+```pascal
+Close(archivo); 
+WriteLn; 
+Write('Oprima tecla de ingreso para finalizar...'); 
+ReadLn 
+
+```
+
 
 # Algoritmo Completo
 ```pascal
