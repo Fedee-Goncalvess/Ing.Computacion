@@ -1,12 +1,15 @@
 # Resumen
-	Se inicializa la asignación y apertura de archivo, se lee registro a registro. Se mantiene un orden mediante whiles con condiciones manteniendo en auxiliares atributos de cada registro. Ejemplo: 
-	Se lee 'Buenos Aires' se procesa todo Buenos Aires. 
-	Se guarda 'La Plata', luego se guarda 'City Bell'.
-	Se contabiliza los hogares de City Bell.
-	Si en una próxima lectura se lee 'Villa Elisa' actualiza los atributos auxiliares y procesa Villa Elisa contabilizando los hogares de Villa Elisa. 
+1. Se inicializa la asignación y apertura de archivo
+2. Se lee registro a registro. 
+3. Se mantiene un orden mediante whiles con condiciones manteniendo en auxiliares atributos de cada registro. 
+
+Ejemplo: 
+	1. Se lee 'Buenos Aires' se procesa todo Buenos Aires. 
+	2. Se guarda 'La Plata', luego se guarda 'City Bell'.	
+	3. Se contabiliza los hogares de City Bell.
+	4. Si en una próxima lectura se lee 'Villa Elisa' actualiza los atributos auxiliares y procesa Villa Elisa contabilizando los hogares de Villa Elisa. 
+
 # Desarrollo del código
-
-
 ## Type
 ### Explicación
 Primero se tiene una constante que marca el fin de un archivo, y luego la estructura de cada registro.
@@ -32,25 +35,6 @@ Var
 	hogProvincia, hogLocalidad, cod_provincia,cod_localidad:integer;
 	reg: RegistroHogares;
 
-```
-
-## Procedure
-### Explicación
-Procedimiento para leer el registro del archivo con corte de control
-Si no es EOF -> Leer
-Es EOF -> Corte de Control
-### Código
-```pascal
-procedure leer(var archivo: tArchivo; var dato: RegistroHogares);
-begin
-	if (not(EOF(archivo))) then
-		{Si no es fin de archivo, leer registro}
-		read (archivo, dato)
-		
-	else
-		{i es EOF, marcar como fin lógico con valorAlto}
-		dato.Codigo_prov := valoralto;
-end;
 ```
 
 ## Bloque Principal
