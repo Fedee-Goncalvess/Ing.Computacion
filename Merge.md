@@ -1,5 +1,6 @@
 
 # Resumen
+
 # Desarrollo del Código
 ## Type
 ###
