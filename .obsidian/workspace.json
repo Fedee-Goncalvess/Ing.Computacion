@@ -27,7 +27,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Archivos (Pascal).md",
+                "file": "Tercer-Año/CBD/Archivos (Pascal).md",
                 "mode": "source",
                 "source": false
               },
@@ -93,8 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 310.5,
-    "collapsed": true
+    "width": 310.5
   },
   "right": {
     "id": "14dde3a46ac89568",
@@ -193,10 +192,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "7ee06113066d3760",
+  "active": "d226262539b2a59c",
   "lastOpenFiles": [
     "Tercer-Año/Economía/Análisis del Contexto de Negocio.md",
-    "Archivos (Pascal).md",
+    "Tercer-Año/CBD/Archivos (Pascal).md",
     "Tercer-Año/Economía/5.Plan de Negocio.md",
     "Tercer-Año/Economía/4. Canvas Model.md",
     "Tercer-Año/Economía/1.Economia.md",
