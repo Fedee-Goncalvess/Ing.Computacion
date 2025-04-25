@@ -30,21 +30,107 @@ Var
 ## Procedure
 ### Explicación
 Procedimiento para leer del archivo con corte de control
-
-
+Si no es EOF -> Leer
+Es EOF -> Corte de Control
 ### Código
 ```pascal
 procedure leer(var archivo: tArchivo; var dato: RegistroHogares);
 begin
 	if (not(EOF(archivo))) then
+		{Si no es fin de archivo, leer registro}
 		read (archivo, dato)
+		
 	else
+		{i es EOF, marcar como fin lógico con valorAlto}
 		dato.Codigo_prov := valoralto;
 end;
 ```
 
+## Bloque Principal
+### Explicación
+
+### Código
+```pascal
+Begin
+	Assign(archivo, ‘hogares.dat’);
+	Reset(archivo);
+	WriteLn(‘Plan HELP 2020’); WriteLn;
+	Leer(archivo, reg);
+```
+
+## Primer While
+### Explicación
+### Código
 ```pascal
 
+	While (reg .codProv <> valorAlto) do begin
+		codProvAct:=reg.codProv;
+		votosProvincia:=0;
+		writeLn('Provincia ', codProvAct);
+		while (reg.codProv=codProvAct) do begin 
+		{corta la ejecución cuando cambia pcia}
+			codLocAct:= reg.codLoc;
+			hogLocalidad:=0;
+			write(' Localidad ', codLocAct);
+			while (reg.codProv=codProvAct) and (reg. codLoc=codLocAct) do begin {corta la ejecución cuando cambia pcia o la localidad}
+				hogLocalidad := hogLocalidad + reg.cantidad;
+				Leer(archivo, reg)
+			end;
+			hogProvincia := hogProvincia + hogLocalidad ;
+			writeLn'('Hogares Plan Help localidad: ', hogLocalidad );
+		end;
+		writeLn(‘Hogares Plan Help Pcia: ', hogProvincia )
+	end;
+	Close(archivo); 
+	WriteLn; 
+	Write('Oprima tecla de ingreso para finalizar...'); 
+	ReadLn 
+end.
+```
+
+## Segundo While
+### Explicación
+### Código
+```pascal
+		while (reg.codProv=codProvAct) do begin 
+		{corta la ejecución cuando cambia pcia}
+			codLocAct:= reg.codLoc;
+			hogLocalidad:=0;
+			write(' Localidad ', codLocAct);
+			while (reg.codProv=codProvAct) and (reg. codLoc=codLocAct) do begin {corta la ejecución cuando cambia pcia o la localidad}
+				hogLocalidad := hogLocalidad + reg.cantidad;
+				Leer(archivo, reg)
+			end;
+			hogProvincia := hogProvincia + hogLocalidad ;
+			writeLn'('Hogares Plan Help localidad: ', hogLocalidad );
+		end;
+		writeLn(‘Hogares Plan Help Pcia: ', hogProvincia )
+	end;
+	Close(archivo); 
+	WriteLn; 
+	Write('Oprima tecla de ingreso para finalizar...'); 
+	ReadLn 
+end.
+```
+
+## Tercer While
+### Explicación
+### Código
+```pascal
+			while (reg.codProv=codProvAct) and (reg. codLoc=codLocAct) do begin {corta la ejecución cuando cambia pcia o la localidad}
+				hogLocalidad := hogLocalidad + reg.cantidad;
+				Leer(archivo, reg)
+			end;
+			hogProvincia := hogProvincia + hogLocalidad ;
+			writeLn'('Hogares Plan Help localidad: ', hogLocalidad );
+		end;
+		writeLn(‘Hogares Plan Help Pcia: ', hogProvincia )
+	end;
+	Close(archivo); 
+	WriteLn; 
+	Write('Oprima tecla de ingreso para finalizar...'); 
+	ReadLn 
+end.
 ```
 
 # Algoritmo Completo
