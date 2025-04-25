@@ -1,9 +1,14 @@
 # Desarrollo del código
 
 ## Type
+### Explicación
+Primero se tiene una constante que marca el fin de un archivo, y luego la estructura de cada registro.
+### Código
 ```pascal
 Type
+	{Marca de Fin de archivo}
 	const valorAlto = 1000000;
+	{Estructura de cada registro}
 	RegistroHogares = Record
 		Codigo_prov: integer;
 		Codigo_localidad: integer;
@@ -23,6 +28,11 @@ Var
 ```
 
 ## Procedure
+### Explicación
+Procedimiento para leer del archivo con corte de control
+
+
+### Código
 ```pascal
 procedure leer(var archivo: tArchivo; var dato: RegistroHogares);
 begin
