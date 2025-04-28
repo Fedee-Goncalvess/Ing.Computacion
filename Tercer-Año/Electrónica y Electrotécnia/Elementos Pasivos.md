@@ -20,5 +20,8 @@ Estas características surgen de la ***Ley de Ohm***:
 
 $R=\frac{U}{I}$                $G=\frac{I}{U}$
 
+**Un *resistor* es un componente de circuito eléctrico, cual posee la característica denominada *resistencia***
+
+
 ---
 [^1]: Solo cuando un elemento es sometido a la aplicación de una tensión o una corriente (exitación) y en función de la respuesta a dicha exitación es posible entender de qué tipo de elemento pasivo se trata.
