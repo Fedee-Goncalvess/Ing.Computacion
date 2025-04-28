@@ -43,7 +43,9 @@ var
 ### Explicación
 1. Se enlaza el archivo maestro con la variable declarada
 2. Luego se enlazan los 3 archivos que el usuario escribe para fusionar
-3. 
+3. Se utiliza apertura rewrite para el maestro
+4. Se utiliza apertura reset para cada archivo y se lee con [[Leer]]
+5. Luego se utiliza [[Mínimo]]
 
 ### Código
 ```pascal
@@ -61,9 +63,24 @@ assign (mae, 'maestro’);
 	minimo (det, rdet, min);
 ```
 
-##
-###
-```
+## Segundo Bloque
+### Explicación
+1. 
+### Código
+```pascal
+while (min.codigo <> valoralto) do begin
+	prod.codigo:= min.codigo;
+	prod.pu=min.pu;
+	prod.cant := 0;
+	while (min.codigo = prod.codigo) do begin
+		prod.cant := prod.cant + min.cant;
+		minimo (det, rdet, min);
+	end;
+	write (mae, prod);
+end;
+close(mae);
+for i:=1 to 3 do
+	close (det[i])
 ```
 
 ##

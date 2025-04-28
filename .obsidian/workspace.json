@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "d165f9572b4d2b09",
+        "id": "fc75c3c096cf4056",
         "type": "tabs",
         "children": [
           {
-            "id": "80f52745985cf2c4",
+            "id": "7017040ca1f44a9f",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
+              "type": "markdown",
               "state": {
-                "aFile": ".obsidian/plugins/obsidian-git/data.json",
-                "bFile": ".obsidian/plugins/obsidian-git/data.json",
-                "aRef": ""
+                "file": "Tercer-Año/CBD/Merge.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "diff",
-              "title": "Diff: data.json"
+              "icon": "lucide-file",
+              "title": "Merge"
             }
           }
         ]
@@ -176,12 +176,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "80f52745985cf2c4",
+  "active": "7017040ca1f44a9f",
   "lastOpenFiles": [
-    "Tercer-Año/Economía/Ecosistema Emprendedor.md",
     "Tercer-Año/Economía/Emprendimiento vs Startup.md",
-    "Tercer-Año/Economía/Aceleradoras.md",
     "Tercer-Año/Economía/Incubadoras.md",
+    "Tercer-Año/Economía/Ecosistema Emprendedor.md",
+    "Tercer-Año/Economía/Aceleradoras.md",
     "Tercer-Año/Economía/Modelo de Negocio.md",
     "Tercer-Año/Economía/5.Plan de Negocio.md",
     "Tercer-Año/Economía/Planeamiento Estrategico.md",
