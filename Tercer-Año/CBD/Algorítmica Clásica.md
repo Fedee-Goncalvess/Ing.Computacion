@@ -1,4 +1,4 @@
-# Generación de Archivos-Merge
+# Generación de Archivos-[[Merge]]
 
 Este algoritmo permite generar un archivo resumiendo información obtenida de múltiples archivos.
 
@@ -8,7 +8,7 @@ Este algoritmo permite generar un archivo resumiendo información obtenida de m�
 ## A tener en cuenta
 
 
-### Actualización de Archivos-Maestro/Detalle
+### [[Actualización de Archivo Maestro-Detalle]]
 
 **Algoritmo que permite actualizar la información de un archivo maestro a partir de múltiples detalles.**
 
@@ -25,11 +25,10 @@ Cada archivo detalle contiene información que genera modificaciones sobre la in
 **Ejemplo Detalle:**
 	Archivo con las licencias solicitadas por dicho personal.
 
-### Corte de Control
+### [[Algoritmo de Corte de Control]]
 Este algoritmo permite presentar la información de un archivo en forma organizada de acuerdo a la estructura del archivo origen.
 
 **Ejemplo**: 
 	Se deben contabilizar los hogares de bajos recursos en el territorio nacional. Cada registro contiene información de provincia, localidad, barrio y cantidad de hogares. La totalización debe realizarse por localidad y provincia.
 
-[Algoritmo de Corte de Control]
 
