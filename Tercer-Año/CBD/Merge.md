@@ -65,7 +65,10 @@ assign (mae, 'maestro’);
 
 ## Segundo Bloque
 ### Explicación
-1. 
+1. Mientras no se llegue al fin de archivo 
+	1. 
+2. Cierra el archivo maestro
+3. Finalmente cierra los 3 archivos que se querían fusionar
 ### Código
 ```pascal
 while (min.codigo <> valoralto) do begin
