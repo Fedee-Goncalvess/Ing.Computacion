@@ -1,5 +1,9 @@
 Permite presentar información de un [[Archivos (Pascal)|archivo]] en forma organizada de acuerdo a la estructura del archivo origen.
 --
+---
+
+**Este algoritmo utiliza el procedure [[Leer]]**
+
 # Resumen
 1. Se inicializa la asignación y apertura de archivo
 2. Se lee registro a registro. 
@@ -10,9 +14,8 @@ Ejemplo:
 	2. Se guarda 'La Plata', luego se guarda 'City Bell'.	
 	3. Se contabiliza los hogares de City Bell.
 	4. Si en una próxima lectura se lee 'Villa Elisa' actualiza los atributos auxiliares y procesa Villa Elisa contabilizando los hogares de Villa Elisa. 
-
+ 
 ---
-
 # Desarrollo del código
 ## Type
 ### Explicación

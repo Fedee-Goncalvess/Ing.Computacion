@@ -4,17 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "bb32cd39b46b22c4",
+        "id": "268720dd92d15e61",
         "type": "tabs",
         "children": [
           {
-            "id": "6edbfcdcf08bbc38",
+            "id": "0ce56bca125c2898",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "Nueva pestaña"
+              "type": "split-diff-view",
+              "state": {
+                "aFile": "Merge.md",
+                "bFile": "Merge.md",
+                "aRef": "HEAD",
+                "bRef": ""
+              },
+              "icon": "diff",
+              "title": "Diff: Merge"
             }
           }
         ]
@@ -143,13 +148,23 @@
               "icon": "lucide-list",
               "title": "Outline"
             }
+          },
+          {
+            "id": "7bb8bec6d4ae519b",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -162,6 +177,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "6edbfcdcf08bbc38",
-  "lastOpenFiles": []
+  "active": "0ce56bca125c2898",
+  "lastOpenFiles": [
+    "Merge.md",
+    "Algoritmo de Corte de Control.md",
+    "Leer.md",
+    "Mínimo.md",
+    "Tercer-Año/CBD/Archivos (Pascal).md",
+    "Tercer-Año/CBD/Algorítmica Clásica.md"
+  ]
 }

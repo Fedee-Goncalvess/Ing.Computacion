@@ -1,10 +1,21 @@
 
+--
+
+---
+**Este algoritmo utiliza [[Leer]] y [[Mínimo]]
 # Resumen
 
+---
 # Desarrollo del Código
-## Type
-###
+## Declaración Type, variables y constantes
+- Se define ``valor_alto`` para especificar cuando se termina un archivo.
+- Crea registro llamado ``producto`` que representa lo que se vende con código, cantidad, precio unitario.
+- Se define archivo de productos ``arc_productos = file of producto;``
+- Se define un array de 3 archivos y 3 productos.
+### Código
 ```pascal
+const valor_alto = '9999’;
+
 type str4 = string[4];
 	producto = record
 	codigo: str4;
@@ -28,9 +39,26 @@ var
 	min, prod: producto;
 ```
 
-## Bloque Principal
-###
-```
+## Primer Bloque 
+### Explicación
+1. Se enlaza el archivo maestro con la variable declarada
+2. Luego se enlazan los 3 archivos que el usuario escribe para fusionar
+3. 
+
+### Código
+```pascal
+assign (mae, 'maestro’);
+	for i:=1 to 3 do begin
+		writeln('ESCRIBA UN NOMBRE PARA EL ARCHIVO: ');
+		read(nombreDet);
+		assign(det[i],nombreDet);
+	end;
+	rewrite (mae);
+	for i:=1 to 3 do begin
+		reset (det[i]);
+		leer (det[i], regd[i]);
+	end
+	minimo (det, rdet, min);
 ```
 
 ##
