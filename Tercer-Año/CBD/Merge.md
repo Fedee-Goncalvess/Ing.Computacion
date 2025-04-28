@@ -65,8 +65,11 @@ assign (mae, 'maestro’);
 
 ## Segundo Bloque
 ### Explicación
-1. Mientras no se llegue al fin de archivo 
-	1. 
+1. Mientras no terminen los tres archivos
+	1. Guarda el código y precio del mínimo en prod
+	2. Inicializa la cantidad acumulada en 0
+	3. Mientras sigan apareciendo productos con el mismo código, suma las cantidades.
+	4. Cuando cambia código, guarda el producto acumulado en el maestro.
 2. Cierra el archivo maestro
 3. Finalmente cierra los 3 archivos que se querían fusionar
 ### Código
@@ -85,17 +88,6 @@ close(mae);
 for i:=1 to 3 do
 	close (det[i])
 ```
-
-##
-###
-```
-```
-
-## 
-###
-```
-```
-
 ## Código Completo
 
 ```pascal
