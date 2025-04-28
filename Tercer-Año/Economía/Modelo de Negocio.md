@@ -2,7 +2,7 @@
 
 - Esquema visual simple para representar cómo una empresa crea, entrega y captura valor.
     
-- Contraste con el Plan de Negocio:
+- Contraste con el [[5.Plan de Negocio]]:
     
     - Modelo: gráfico, ágil, útil para explicar rápidamente.
         
@@ -11,7 +11,7 @@
 
 ---
 
-## 🧱 CANVAS MODEL (Alexander Osterwalder)
+## 🧱 [[4. Canvas Model]] (Alexander Osterwalder)
 
 ### 🟨 Núcleo del modelo: **Propuesta de Valor**
 
