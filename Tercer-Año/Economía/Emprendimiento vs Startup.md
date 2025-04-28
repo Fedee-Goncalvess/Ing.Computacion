@@ -109,7 +109,7 @@ Las startups suelen avanzar por **etapas de inversión**, en cada una de las cua
     
     - Fondos privados.
     
-    - Aceleradoras.
+    - [[Aceleradoras]].
     
 - Suele usarse para:
     
