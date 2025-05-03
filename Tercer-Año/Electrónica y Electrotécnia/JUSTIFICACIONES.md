@@ -15,6 +15,13 @@ La ubicación de este punto homólogo está dada por el sentido de enrollado del
 ### Fuente de Corriente Real
 La corriente de la fuente real **depende de la tensión**, por lo que la corriente va en el eje vertical y la tensión va en el eje horizontal. La corriente que entrega entre A y B varía en función de la tensión entre A y B. 
 
+
+Tensión = 0
+Corriente de cortocircuito = Fuente
+
+Tensión = 
+
+
 **IMPORTANTE**
 	No está bien decir que la corriente **~~depende de la resistencia~~** ya que el elemento que se analiza podría no tener resistencia, incluso podría ser otra fuente. 
 
