@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "faf6179f444669fa",
+        "id": "38ba74d3c800c936",
         "type": "tabs",
         "children": [
           {
-            "id": "a7faab9106742a01",
+            "id": "6cd26793a0b9cd21",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -172,8 +172,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b081ecd57020ede8",
+  "active": "8869fd1401ac0dd8",
   "lastOpenFiles": [
+    "conflict-files-obsidian-git.md",
+    "Tercer-Año/Electrónica y Electrotécnia/JUSTIFICACIONES.md",
+    "Tercer-Año/Electrónica y Electrotécnia/Elementos Pasivos.md",
+    "Tercer-Año/Electrónica y Electrotécnia/Elementos Activos.md",
     "Tercer-Año/CBD/Actualización de Archivo Maestro-Detalle.md",
     "Tercer-Año/CBD/Mínimo.md",
     "Tercer-Año/CBD/Merge.md",
