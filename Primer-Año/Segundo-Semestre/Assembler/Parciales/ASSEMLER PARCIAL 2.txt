@@ -1,0 +1,46 @@
+ORG 1000H
+  TablaA DW 1,2,5,4,7
+  TablaB DW 2,3,4,5,1
+  CONT DB 0
+ORG 3000H
+SUBRUTINA:    ;//CX=B  
+  PUSH BX
+  PUSH CX
+  MOV BX, SP 
+  ADD BX,6  ;//VALOR B
+  MOV CX, [BX]
+  ADD BX,2
+  MOV BX,[BX]
+  CMP CX,[BX]
+  JNS FIN_subrutina
+  MOV [BX],CX
+FIN_subrutina:
+  POP CX
+  POP BX
+  RET
+
+ORG 2000H
+  MOV AX, OFFSET TablaA
+  MOV BX, OFFSET TablaB
+  MOV DL, OFFSET TablaB- OFFSET TablaA
+  MOV DH,0
+LAZO:
+  SUB DL,2
+  JS FIN
+  PUSH AX
+  MOV CX,[BX]
+  CMP CX,10
+  JNZ SEGUIR
+  INC DH
+SEGUIR:
+  PUSH CX
+  CALL SUBRUTINA
+  POP CX 
+  POP AX
+  ADD AX,2
+  ADD BX,2
+  JMP LAZO
+FIN:
+  MOV CONT, DH
+  HLT 
+  END

@@ -1,0 +1,41 @@
+ORG 1000H
+VALOR DB 1
+NUM DB 3
+ORG 3000H
+;------------------------------------------------------
+ROTARIZQ:
+  
+  ADD AL,AL     ;MUEVO UNA POSICIÓN DEL BYTE
+  ADC AL,0      ;AGREGO EL CARRY
+  DEC CL        
+  CMP CL,0
+  JNZ ROTARIZQ
+  
+  RET
+;------------------------------------------------------
+ROTARDER:
+  ;    //CL CANTIDAD DE ROTACIONES A LA DERECHA
+  ;    //1 DERECHA = 7 IZQUIERDA (AL SER 8 BITS )
+  MOV DH,7
+  MOV DL, 0
+LAZO1:
+  ADD DL,CL;MULTIPLICO 7 * CANT_DERECHA
+  ADC DL,0
+  DEC DH
+  CMP DH,0
+  JNZ LAZO1
+  MOV CL,DL
+  
+  CALL ROTARIZQ
+  
+  RET
+;------------------------------------------------------
+ORG 2000H
+  MOV AL,0      ;  INICIALIZACION DE REGISTRO
+  MOV CX,0      ;  INICIALIZACION DE REGISTRO
+  MOV AL,VALOR  ; VALOR DEL BYTE           //PARAMETROS
+  MOV CL, NUM   ; CANTIDAD DE ROTACIONES   //PARAMETROS
+  CALL ROTARDER
+  MOV VALOR,AL
+  HLT 
+  END

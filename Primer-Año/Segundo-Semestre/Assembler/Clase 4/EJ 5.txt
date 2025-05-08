@@ -1,0 +1,32 @@
+ORG 1000H 	; Datos
+    TABLA 	DB 	1,4,5,3,10,7,14,78,23,18
+    VALOR	DB 	3
+    LENGHT DB 10
+    
+ORG 3000H  ; Subrutina
+;---------------------------------------------
+SUMATABLA:
+
+    PUSH DX
+    MOV DL,0
+    MOV DH,LENGHT
+    MOV BX,AX
+SUMA:
+    ADD [BX],CL
+    INC BX 
+    INC DX
+    CMP DH, DL
+    JNZ SUMA
+    
+    POP DX
+    RET
+;---------------------------------------------
+ORG 2000H   ; Programa Ppal.
+
+    MOV AX, OFFSET TABLA
+    MOV CL, VALOR
+    
+    CALL SUMATABLA
+
+    HLT
+    END

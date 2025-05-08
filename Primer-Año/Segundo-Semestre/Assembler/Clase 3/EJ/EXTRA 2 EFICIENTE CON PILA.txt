@@ -1,0 +1,76 @@
+ORG 1000H
+  TablaA DB 1,2,5,4,7
+  TablaB DB 2,3,4,5,7
+  SUMAB DW 0
+  DimL EQU 5
+  MayorA EQU 5
+ORG 3000H
+
+;------------------------------------------------------
+REEMPLAZAR:                ; SI B<A ENTONCES A<-B
+  PUSH BX                   ; CONSERVO DATOS DE BX EN PILA
+  MOV BX, AX               ; CARGO LA DIREC.MEM. DE AX <- BX 
+  CMP CL,[BX]              ; COMPARO B - A
+  JNS FIN  
+  MOV [BX],CL              ; SI B<A ENTONCES A<-B              
+FIN:
+  POP BX                   ; TRAIGO EL DATO ORIGINAL DE BX  
+  RET
+;--------------------------------------------------------
+;--------------------------------------------------------
+;--------------------------------------------------------
+;----------------------------------// SUMAR TABLA B//----
+SUMARTABLA:
+  PUSH AX                  ; CONSERVO DATOS AX
+  PUSH BX                  ; CONSERVO DATOS BX
+  
+  MOV BX,SP 
+  ADD BX,6                 ; RECUPERO VALOR EN PILA
+  
+  MOV AX,[BX]              ; GUARDO EL VALOR DE TABLA B
+  ADD BX, 2                ; RECUPERO VALOR DEL TOTAL DE SUMA 
+  ADD [BX],AX              ; SUMO EL VALOR CON EL TOTAL
+  POP BX                   ; RESTAURO DATOS EN BX
+  POP AX                   ; RESTAUROO DATOS EN AX
+
+  RET
+;------------------------------------------------------
+;------------------------------------------------------
+;------------------------------------------------------
+;------------------------------------------------------
+ORG 2000H
+  MOV DX,0       ; INDICE INICIAL DEL FOR
+  PUSH DX        ; SUMA TOTAL DE TALBA B EN PILA
+  MOV DL,DimL    ; INDICE FIN DEL FOR
+  MOV AX, OFFSET TablaA
+  MOV BX, OFFSET TablaB
+;---------------------------------------------------------
+LAZO1:
+  MOV CX, 0      ;INICIALIZO CX EN 0
+  MOV CL, [BX]   ; GUARDO VALOR ACTUAL DE TABLA B
+  PUSH CX        ; MANDO POR VALOR POR PILA LA SUMA
+  CMP CX,MayorA
+  JS  NOESMAYOR  
+  JZ  NOESMAYOR
+  CALL SUMARTABLA
+;----------------------------------------------------------
+  ;MOV AX, OFFSET TablaA    ////////////////////PARAMETROS
+  ;MOV CX, ValorB           ////////////////////PARAMETROS
+NOESMAYOR:
+  CALL REEMPLAZAR
+  POP CX         ; UNA VEZ Q USO CX, HAGO POP PARA NO APILAR BASURA
+;---------------------------------------------------------
+  INC AX          ; INCREMENTO DIR.MEM DE TABLA A
+  INC BX          ; INCREMENTO DIR.MEM DE TABLA B
+  INC DH          ; INCREMENTO INDICE DEL FOR
+  CMP DL,DH       ; EVALUO LA DIML
+  JNZ LAZO1
+;---------------------------------------------------------
+;---------------------------------------------------------
+;---------------------------------------------------------
+;-------------------------------------//SUMAR TABLA B//---
+  POP CX          ; RECUPERO VALOR TOTAL DE SUMA
+  MOV SUMAB, CX   ; GUARDO EN MEMORIA LA SUMA
+  
+  HLT 
+  END

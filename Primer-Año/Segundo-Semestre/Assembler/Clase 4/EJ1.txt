@@ -1,0 +1,24 @@
+ORG 1000H
+VALOR DB 1
+NUM DB 3
+ORG 3000H
+;------------------------------------------------------
+ROTARIZQ:
+  
+  ADD AL,AL
+  ADC AL,0
+  DEC CL
+  CMP CL,0
+  JNZ ROTARIZQ
+  
+  RET
+;------------------------------------------------------
+ORG 2000H
+  MOV AL,0
+  MOV CL,0
+  MOV AL,VALOR
+  MOV CL, NUM
+  CALL ROTARIZQ
+  MOV VALOR,AL
+  HLT 
+  END

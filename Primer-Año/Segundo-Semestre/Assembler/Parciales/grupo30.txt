@@ -1,0 +1,44 @@
+          ORG 1000H
+          PALABRA DB "ARENERA"
+          CONT DB ?
+
+          ORG 3000H
+EQUALS:   PUSH BX
+          PUSH AX
+          PUSH CX
+          MOV BX, AX
+          MOV AL, [BX]
+          MOV BX, CX
+          CMP AL, [BX]         
+          JNZ  NO
+          MOV DL, 0FFH
+          JMP FINR
+NO:       MOV DL, 00H
+          
+FINR:     POP CX
+          POP AX
+          MOV BX, SP
+          ADD BX, 4
+          MOV [BX], DL
+          POP BX          
+          RET
+
+          ORG 2000H
+          MOV DX,0
+          MOV AX, OFFSET PALABRA
+          MOV CX, OFFSET CONT
+MOVER:    DEC CX
+          CMP AX, CX
+          JNS FIN
+          PUSH DX
+          CALL EQUALS
+          POP DX
+          CMP DL, 0FFH
+          JNZ NOSUMAR 
+          INC DH
+NOSUMAR:  INC AX
+          JMP MOVER
+          
+FIN:      MOV CONT, DH
+          HLT
+          END
