@@ -1,0 +1,16 @@
+Procedure insertar(var a:arbol; d:dato);//sin repetidos
+begin
+  if (a=nil)then
+  begin
+    new(a);
+    a^.datos:=d;
+    a^.HI:=nil;
+    a^.HD:=nil;
+  end
+  else
+    if a^.datos>d then
+      insertar(a^.HI,d)
+    else
+      if a^.datos<d then
+        insertar(a^.HD,d)
+end;

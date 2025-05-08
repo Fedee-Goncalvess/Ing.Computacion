@@ -1,0 +1,14 @@
+Procedure recorridoAcotado(a:arbol;inf:integer;sup:integer);
+begin
+  if (a <> nil) then
+    if (a^.dato >= inf) then
+      if (a^.dato <= sup) then begin
+        //Operacion
+        valoresEnRango(a^.hi, inf, sup);
+        valoresEnRango (a^.hd, inf, sup);
+      end
+      else
+        valoresEnRango(a^.hi, inf, sup)
+    else
+      valoresEnRango(a^.hd, inf, sup);
+end;

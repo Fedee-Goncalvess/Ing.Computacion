@@ -1,0 +1,3 @@
+program ejemplo;
+const
+  v_costos:array [0..1] of integer =(costo_ejec,costo_turist);

@@ -1,0 +1,36 @@
+procedure BORRAR (var a:arbol; dato:integer; var resultado:boolean);
+var
+   aux:arbol;
+begin
+  if a=nil then resultado:=false
+  else
+    if a^.dato>dato then BORRAR(a^.HI,dato,resultado)
+    else
+      if a^.dato<dato then BORRAR(a^.HD,dato,resultado)
+      else begin
+        resultado:=true;
+        if (a^.HI=nil) and (a^.HD=nil) then begin
+          dispose(a);
+          a:=nil;
+        end
+        else
+          if (a^.HI<>nil) and (a^.HD=nil) then begin
+            aux:=a;
+            a:= a^.HI;
+            dispose(aux);
+          end
+          else
+            if (a^.HI=nil) and (a^.HD<>nil) then begin
+              aux:=a;
+              a:= a^.HD;
+              dispose(aux);
+            end
+            else
+              if (a^.HI<>nil) and (a^.HD<>nil) then
+              begin
+                a^.dato:= vermin(a^.HD);
+                BORRAR(a^.HD,a^.dato,resultado);
+              end;
+      end;
+
+end;

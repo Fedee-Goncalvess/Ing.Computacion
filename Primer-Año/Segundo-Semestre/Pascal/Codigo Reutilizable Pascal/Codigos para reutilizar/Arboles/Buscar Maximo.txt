@@ -1,0 +1,10 @@
+function Vermax(a:arbol):integer;
+begin
+  if (a<>nil) and (a^.hijoD<>nil) then
+  begin
+    Vermax:=Vermax(a^.hijoD);
+  end
+  else
+    if a=nil then Vermax:=-1
+    else Vermax:= a^.elemento;
+end;
