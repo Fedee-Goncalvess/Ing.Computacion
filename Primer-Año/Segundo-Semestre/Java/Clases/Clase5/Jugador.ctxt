@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Jugador
+comment1.params=Partidos\ Goles
+comment1.target=Jugador(int,\ int)
+comment2.params=
+comment2.target=Jugador()
+comment3.params=Partidos
+comment3.target=void\ setPartidos(int)
+comment4.params=
+comment4.target=int\ getPartidos()
+comment5.params=Goles
+comment5.target=void\ setGoles(int)
+comment6.params=
+comment6.target=int\ getGoles()
+numComments=7

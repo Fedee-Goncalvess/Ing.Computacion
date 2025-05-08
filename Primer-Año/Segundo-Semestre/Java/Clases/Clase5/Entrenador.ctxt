@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Entrenador
+comment1.params=Copas
+comment1.target=Entrenador(int)
+comment2.params=
+comment2.target=Entrenador()
+comment3.params=Copas
+comment3.target=void\ setCopas(int)
+comment4.params=
+comment4.target=int\ getCopas()
+numComments=5
