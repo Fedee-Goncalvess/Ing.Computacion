@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1713830677 source:g:\ingenieria\2do año\taller de lenguaje 1\c\pruebas\bits\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
