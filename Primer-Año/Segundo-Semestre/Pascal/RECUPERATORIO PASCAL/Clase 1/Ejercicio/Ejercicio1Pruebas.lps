@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="Ejercicio1Pruebas.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Ejercicio1"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="154"/>
+        <CursorPos X="43" Y="179"/>
+        <FoldState Value=" T3lc083 Pi1iG0 T1nC05 TL Hm701022?"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="5">
+      <Position>
+        <Filename Value="Ejercicio1Pruebas.lpr"/>
+        <Caret Line="90" Column="53" TopLine="58"/>
+      </Position>
+      <Position>
+        <Filename Value="Ejercicio1Pruebas.lpr"/>
+        <Caret Line="89" Column="33" TopLine="58"/>
+      </Position>
+      <Position>
+        <Filename Value="Ejercicio1Pruebas.lpr"/>
+        <Caret Line="138" Column="52" TopLine="113"/>
+      </Position>
+      <Position>
+        <Filename Value="Ejercicio1Pruebas.lpr"/>
+        <Caret Line="137" Column="34" TopLine="112"/>
+      </Position>
+      <Position>
+        <Filename Value="Ejercicio1Pruebas.lpr"/>
+        <Caret Line="142" Column="44" TopLine="115"/>
+      </Position>
+      <Position>
+        <Filename Value="Ejercicio1Pruebas.lpr"/>
+        <Caret Line="144" Column="42" TopLine="115"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

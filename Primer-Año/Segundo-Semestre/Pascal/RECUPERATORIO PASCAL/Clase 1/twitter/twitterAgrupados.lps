@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="twitterAgrupados.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <CursorPos X="30" Y="80"/>
+        <FoldState Value=" TC4D51 T3je085 PiSj70 TL Hjb516y"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="3">
+      <Position>
+        <Filename Value="twitterAgrupados.pas"/>
+        <Caret Line="59" Column="23" TopLine="36"/>
+      </Position>
+      <Position>
+        <Filename Value="twitterAgrupados.pas"/>
+        <Caret Line="55" Column="19" TopLine="34"/>
+      </Position>
+      <Position>
+        <Filename Value="twitterAgrupados.pas"/>
+        <Caret Line="57" Column="13" TopLine="37"/>
+      </Position>
+      <Position>
+        <Filename Value="twitterAgrupados.pas"/>
+        <Caret Line="63" Column="22" TopLine="31"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>
