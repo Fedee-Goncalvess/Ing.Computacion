@@ -11,13 +11,32 @@
             "id": "6cd26793a0b9cd21",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Tercer-Año/Electrónica y Electrotécnia/JUSTIFICACIONES.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "JUSTIFICACIONES"
+            }
+          },
+          {
+            "id": "2e6461408d020d54",
+            "type": "leaf",
+            "state": {
+              "type": "split-diff-view",
+              "state": {
+                "aFile": ".obsidian/workspace.json",
+                "bFile": ".obsidian/workspace.json",
+                "aRef": ""
+              },
+              "icon": "diff",
+              "title": "Diff: workspace.json"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -74,7 +93,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "aaf6582844f51aaf",
@@ -172,10 +192,17 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "8869fd1401ac0dd8",
+  "active": "2e6461408d020d54",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
+    "Tercer-Año/Electrónica y Electrotécnia/Régimen Transitorio.md",
+    "Pasted image 20250509141914.png",
+    "Pasted image 20250509140450.png",
+    "Pasted image 20250509140135.png",
+    "Pasted image 20250509135152.png",
+    "Pasted image 20250509135110.png",
+    "Pasted image 20250509133349.png",
     "Tercer-Año/Electrónica y Electrotécnia/JUSTIFICACIONES.md",
+    "conflict-files-obsidian-git.md",
     "Tercer-Año/Electrónica y Electrotécnia/Elementos Pasivos.md",
     "Tercer-Año/Electrónica y Electrotécnia/Elementos Activos.md",
     "Tercer-Año/CBD/Actualización de Archivo Maestro-Detalle.md",
