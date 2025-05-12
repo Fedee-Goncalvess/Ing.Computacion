@@ -1,0 +1,74 @@
+ORG 1000H
+VOCS DB 'A','E','I','O','U'
+CADENA DB "FEDERICO"
+LENGTH EQU 8
+ORG 3000H
+
+;------------------------------------------------------
+ES_VOCAL:
+  
+  MOV BX, OFFSET VOCS  ; GUARDAMOS DIREC.MEM DE TABLA 
+  MOV CX, BX           ; 
+  ADD CX,5             ; GUARDAMOS EL I=FIN  
+
+LAZO:                  ; FOR DE 0 A 4
+  CMP AL, [BX]         ; COMPARO CARACTER CON TABLA EN INDICE I 
+  JZ SI                ; SI SON IGUALES ES VOCAL
+  INC BX               ; SI NO ES IGUAL, PASO A SIGUIENTE VOCAL
+  CMP CX,BX            ; EVALUO QUE SIGA EN MI DIML
+  JNZ LAZO              ; VUELVO AL FOR
+  JMP NO
+  
+SI:
+  MOV AX, 0FFH         ; ES VOCAL, GUARDO EN REGISTRO VALOR 
+  RET
+NO:
+  MOV AX, 00H          ; NO ES VOCAL, GUARDO EN REGISTRO VALOR
+  RET
+
+;------------------------------------------------------
+VOCALES:                ;//  AX=DIREC.MEM  //  BX=DIREC.MEM/CADENA  //  DX=DIREC.MEM  //  
+  
+  MOV BX,AX             ;ME GUARDO EN BX DIREC.MEM. DEL PRIMER VALOR DE LA TABLA
+  ADD AX,LENGTH              ; FIN DE CADENA
+  PUSH AX               ; FIN DE CADENA A LA PILA
+  MOV CX,0
+  PUSH CX               ; HACEMOS UN CONTADOR Y LO MANDAMOS A PILA
+LazoV:
+ ;////////////////////    //PARAMETROS//
+  MOV AL ,[BX] ;//////  ;ME GUARDO EN AX EL PRIMER VALOR DE LA TABLA
+ ;////////////////////  ;Y LO PASO COMO PARAMETRO POR VALOR EN REGISTRO A ES_VOCAL
+  MOV DX, BX            ;GUARDO EN DX LA DIREC.MEM. DE LA CADENA Y BX LA USA ES_VOCAL
+  
+  CALL ES_VOCAL
+  
+  POP CX                ; TRAEMOS CONTADOR DE PILA 
+  CMP AX, 0FFH          ;SI EN AX HAY VOCAL, SUMAR 1 AL CONTADOR
+  JNZ SIG
+  INC CX                ;LO INCREMENTAMOS            
+SIG:  
+  INC DX                ; PASAMOS A SIGUIENTE CARACTER DE CADENA
+  MOV BX,DX             ; 
+  POP AX                ; TRAEMOS DE PILA FIN DE CADENA
+  CMP BX,AX             ; EVALUAMOS SI LA CADENA TERMINO
+  PUSH AX
+  PUSH CX
+  JNZ LazoV
+  
+FIN: 
+  POP CX
+  POP AX
+  
+  RET
+;------------------------------------------------------
+ORG 2000H
+                          ;//PARAMETROS//
+  MOV AX,OFFSET CADENA    ;//          //  PASO POR REFERENCIA EN REGISTRO UN CARACTER
+                          ;//          //
+                
+  CALL VOCALES ; LLAMO SUBRUTINA
+
+  
+  
+  HLT 
+  END

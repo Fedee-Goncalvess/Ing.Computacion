@@ -1,0 +1,13 @@
+procedure BUSCAR (a:arbol; var p:arbol; d:dato);
+begin
+  if (a<>nil) then begin
+    if d > a^.datoS then
+      BUSCAR(a^.HD, p,d)
+    else if d < a^.datos then
+      BUSCAR (a^.hi, p,d)
+    else begin
+      p:=a;
+    end;
+  end
+  else p:=nil
+end; 

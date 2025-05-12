@@ -1,0 +1,25 @@
+ORG 1000H
+  ValorA DW  10000
+  ValorB DW  100
+
+ORG 3000H
+
+;------------------------------------------------------
+REEMPLAZAR:                ; SI B<A ENTONCES A<-B
+  PUSH BX                   ; CONSERVO DATOS DE BX EN PILA
+  MOV BX, AX               ; CARGO LA DIREC.MEM. DE AX <- BX 
+  CMP CX,[BX]              ; COMPARO B - A
+  JNS FIN            
+  MOV [BX], CX               ; SI B<A ENTONCES A<-B
+FIN:
+  POP BX                   ; TRAIGO EL DATO ORIGINAL DE BX  
+  RET
+;------------------------------------------------------
+  
+;------------------------------------------------------
+ORG 2000H
+  MOV AX, OFFSET ValorA    ;////////////////////PARAMETROS
+  MOV CX, ValorB           ;////////////////////PARAMETROS
+  CALL REEMPLAZAR
+  HLT 
+  END

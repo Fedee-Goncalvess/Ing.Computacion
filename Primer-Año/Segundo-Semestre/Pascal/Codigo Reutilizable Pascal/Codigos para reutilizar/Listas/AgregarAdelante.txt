@@ -1,0 +1,9 @@
+Procedure agregarAdelante(var l: lista; d:dato);
+var
+   aux: lista;
+begin
+     new(aux);
+     aux^.datos := d;
+     aux^.sig := l;
+     l:= aux;
+end;

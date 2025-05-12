@@ -1,0 +1,121 @@
+ORG 1000H
+
+	TablaA DW 1,2,5,4,7
+	TablaB DW 2,3,4,5,1
+	IgualA10 DW 0
+	LongT DB 5
+
+
+ORG 3000H
+
+;---------------------------------------------------------------------------
+
+MayorA:
+    
+	PUSH BX             ; CONSERVACION DE DATOS             	 1) PUSH BX  CONSERVA BX
+    
+	PUSH AX                                                         			;2) PUSH AX  CONSERVA AX
+    
+    
+
+	MOV BX,SP    ; RECUPERO EL VALOR A
+    
+	ADD BX,8
+    
+	PUSH BX      ; GUARDO LA DIRECCION DE REFERENCIA DEL VALOR A    ;3) PUSH BX  DIREC. VALOR A
+    
+    
+	MOV AX,[BX]   ; GUARDO EL VALOR A
+    
+    
+	SUB BX,2      ; RECUPERO EL VALOR B
+    
+	MOV BX,[BX]   ; GUARDO EL VALOR B
+
+    
+	CMP BX,AX
+    
+	JS SI
+    
+	POP BX						3) POP BX
+	JMP NO
+	RET
+
+
+SI:
+    
+	MOV AX,BX    ; COPIO EL VALOR B 
+    
+	POP BX       ; TRAIGO DE PILA LA DIREC. VALOR A                    3)POP BX
+    
+	MOV [BX],AX  ; REEMPLAZO EL VALOR DE A POR EL VALOR DE B
+    
+NO:
+	POP AX        ; CONSERVACION DE DATOS                              2) POP AX  CONSERVA AX                
+    
+	POP BX        ; CONSERVACION DE DATOS                              1) POP BX  CONSERVA BX
+    
+    
+	RET
+
+;---------------------------------------------------------------------------
+TablaAyB:
+	;// AX=DIREC. TablaA // BX = DIREC. TablaB
+
+	PUSH DX		;// CONSERVACION DE DATOS				1)PUSH DX
+	PUSH CX 		; // CONSERVACION DE DATOS				2)PUSH CX
+	
+	MOV CX,0		;CONTADOR DE IgualesA10
+	MOV DX,0		;INDICE LAZO
+	MOV DH,LongT	; FIN LAZO
+
+LAZO:
+	PUSH AX		;//PARAMETRO POR REF. POR PILA  DIREC.TablaA		3)PUSH AX  
+	MOV AX,[BX] 	
+	PUSH AX		;//PARAMETRO POR VALOR POR PILA VALOR TablaB		4)PUSH AX 
+
+	CMP AX,10	;EVALUA TABLA B B>10 
+	JS SIG
+	JZ SIG	
+	INC CX		; SI EL RESULTADO DE B-10 ES 0 O NEGATIVO SALTA
+
+SIG:		
+	CALL MayorA	
+
+	POP AX								;4)POP AX						
+	POP AX		;//TRAIGO DE PILA DIREC. TABLA A			3)POP AX
+	
+	INC AX		;SIGUIENTE INDICE DE TABLA
+	INC BX
+	INC DL
+	CMP DL,DH
+	JNZ LAZO		;SI NO TERMINA LA TABLA, SIGUE
+	
+	MOV BX,SP
+	ADD BX,6		;//RECUPERO DIREC. DE PILA DE DIRE.MEM. CantIgualA10
+
+	MOV BX,[BX]	;//RECUPERO DIREC. DE MEMORIA DE CantIgualA10
+	MOV [BX], CX	;// GUARDO EN MEM LA CANTIDAD DE NUMS>10
+	
+	POP CX 								;2)POP CX
+	POP DX								;1)POP DX
+	
+	RET
+;---------------------------------------------------------------------------
+
+ORG 2000H
+
+    
+
+	MOV AX, OFFSET IgualA10
+	PUSH AX						;// 1) PUSH AX CANT IGUAL A 10
+	MOV AX, OFFSET TablaA	;PARAMETROS//	 DIREC.TablaA
+	MOV BX, OFFSET TablaB	;PARAMETROS//	DIREC.TablaB
+	CALL TablaAyB
+
+	POP AX						;// 1) POP AX
+	   
+    
+	HLT
+    
+	END

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="C:\lazarus\fpc\3.2.2\bin\i386-win32\fpc.exe" Date="1449426723"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -gw2 -godwarfsets -gl -l -vewnhibq &quot;-FiC:\Users\rec\Desktop\Codigo Pascal\PROGRAMACION II\RECUPERATORIO PASCAL\Parciales\lib\i386-win32&quot; &quot;-FuC:\Users\rec\Desktop\Codigo Pascal\PROGRAMACION II\RECUPERATORIO PASCAL\Parciales\&quot; &quot;-FUC:\Users\rec\Desktop\Codigo Pascal\PROGRAMACION II\RECUPERATORIO PASCAL\Parciales\lib\i386-win32\&quot; &quot;-FEC:\Users\rec\Desktop\Codigo Pascal\PROGRAMACION II\RECUPERATORIO PASCAL\Parciales\&quot; &quot;-oC:\Users\rec\Desktop\Codigo Pascal\PROGRAMACION II\RECUPERATORIO PASCAL\Parciales\Parcial2.exe&quot; Parcial2.lpr"/>
+</CONFIG>

@@ -1,0 +1,31 @@
+;----------------------------------------------------------------
+SUMARTABLA:
+    PUSH BX          ;CONSERVO DATOS DEL PROGRAMA
+    PUSH DX
+    PUSH CX
+
+    MOV CX,0         ; CL INICIO DEL INDICE
+    MOV CH,LONG      ; CH FIN DEL INDICE
+    MOV DX,0         ; RESULTADO DE SUMA
+    
+    MOV BX,AX        ; GUARDO DIRE.MEM DE TABLA
+SUMA:
+    ADD DL,[BX]      ; SUMO INDICE DE TABLA
+    INC BX           ; VOY AL SIGUIENTE INDICE
+    INC CL        
+    CMP CL,CH        ; EVALUO DIML
+    JNZ SUMA
+
+    MOV AX,DX        ; PARA  CAMBIAR PARAMETRO DE SALIDA
+
+    POP CX
+    POP DX
+    POP BX    
+    RET
+;----------------------------------------------------------------
+
+;-----------PROGRAMA PRINCIPAL-----------------------------------
+;-----------SUMA DE TABLA // AX=RESULTADO //---------------------
+    MOV AX, OFFSET TABLA      ;    // PARAMETRO
+    CALL SUMARTABLA
+    

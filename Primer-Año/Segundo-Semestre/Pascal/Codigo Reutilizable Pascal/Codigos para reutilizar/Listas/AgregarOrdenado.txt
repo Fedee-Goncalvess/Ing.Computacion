@@ -1,0 +1,25 @@
+procedure agregarOrdenado(var pri:lista; d:dato);
+
+var
+   nuevo, anterior, actual: lista;
+begin
+     new (nuevo);
+     nuevo^.dato:= d;
+     nuevo^.sig := nil;
+     if (pri = nil) then
+          pri := nuevo
+     else
+     begin
+          actual := pri;
+          anterior := pri;
+          while (actual<>nil) and (actual^.dato < nuevo^.dato) do begin
+               anterior := actual;
+               actual:= actual^.sig;
+          end;
+          if (anterior = actual) then
+               pri := nuevo
+          else
+               anterior^.sig := nuevo;
+          nuevo^.sig := actual;
+     end;
+end;

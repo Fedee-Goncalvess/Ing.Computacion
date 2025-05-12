@@ -1,0 +1,415 @@
+programa PromoGrupo12
+procesos
+  proceso JuntarFlor (ES flor:numero)
+  comenzar
+    mientras (HayFlorEnLaEsquina)
+      tomarFlor
+      flor:=flor+1
+  fin
+  proceso JuntarPapel (ES pap:numero)
+  comenzar
+    mientras(HayPapelEnLaEsquina)
+      tomarPapel
+      pap:= pap+1
+  fin
+  proceso Maximo (E tot1:numero; E tot2:numero ; E tot3:numero; E tot4:numero;ES idMax:numero )
+  variables
+    max:numero
+  comenzar
+    si (tot1>tot2)
+      max:=tot1
+      idMax:=1
+    sino 
+      max:=tot2
+      idMax:=2
+      si (tot3>max)
+        max:=tot3
+        idMax:=3
+      sino 
+        si (tot4>max)
+          max:=tot4
+          idMax:=4
+    Informar (idMax)
+    Informar (max)
+  fin
+  proceso Carrera (ES pap:numero;E miCa:numero)
+  variables
+    n:numero        {numero random pasos}
+    pasosCa:numero
+  comenzar
+    pap:=0
+    n:=0
+    pasosCa:=miCa
+    JuntarPapel (pap)
+    mientras (pasosCa <> 49)  {el robot debe llegar si o si a la calle 49}
+      Random (n,1,3)
+      mientras (pasosCa+n<50) {no puede llegar a la calle 50}
+        pasosCa:=pasosCa+n
+        Pos (PosAv,pasosCa)
+        JuntarPapel (pap)
+        Random (n,1,3)
+    Informar (pap)
+    Pos (PosAv,miCa)
+  fin
+  proceso Escalador (ES flor:numero;E miAv:numero;E miCa:numero)
+  variables
+    n:numero      {numero random ancho}
+    ultAv:numero 
+    ultCa:numero
+  comenzar
+    flor :=0
+    JuntarFlor (flor)
+    repetir 5
+      repetir 2      {---------------------------2 o 3 de alto?}
+        BloquearEsquina (PosAv,PosCa+1)
+        mover
+        LiberarEsquina (PosAv,PosCa-1)
+        JuntarFlor (flor)
+      derecha
+      Random (n,2,4){----------------------------3,5 de ancho o 2,4?}
+      repetir n
+        BloquearEsquina (PosAv+1,PosCa)
+        mover
+        LiberarEsquina (PosAv-1,PosCa)
+        JuntarFlor (flor)
+      repetir 3
+        derecha 
+    ultAv:=PosAv
+    ultCa:=PosCa  
+    Pos (miAv,miCa)              {Vuelve al inicio}
+    LiberarEsquina (ultAv,ultCa)  
+    Informar (flor)
+  fin
+  proceso Especial (E miAv:numero;E miCa:numero;E elem:numero;E cant:numero)
+  comenzar
+    repetir cant
+      BloquearEsquina (1,100)
+      Pos (1,100)
+      si (elem = 1)
+        depositarPapel
+      sino 
+        depositarFlor
+      Pos (miAv,miCa)
+      LiberarEsquina (1,100)
+  fin
+  proceso COMUN (E elem:numero; E cant:numero;E miAv:numero ;E miCa:numero)
+  variables
+    ultAv:numero
+    ultCa:numero
+  comenzar
+    BloquearEsquina (1,50)
+    Pos (1,50)
+    derecha
+    mientras ((cant>0)&(PosAv<100))
+      si (elem = 1)
+        depositarPapel
+        cant:=cant-1
+      sino
+        depositarFlor
+        cant:=cant-1
+      BloquearEsquina (PosAv+1,50)
+      mover
+      LiberarEsquina (PosAv-1,50)
+    ultAv:=PosAv
+    ultCa:=PosCa
+    Informar (PosAv)
+    Pos(miAv,miCa)
+    LiberarEsquina (ultAv,ultCa)
+  fin
+{-------------------------------------------------------------------}
+areas
+  areaJuez : AreaP (1,1,1,1)
+  areaC1 : AreaP (5,1,5,49)
+  areaC2 : AreaP (10,1,10,49)
+  areaC3 : AreaP (15,1,15,49)
+  areaC4 : AreaP (20,1,20,49)
+  {------------------------------------------Hay que cambiarla si la escalera es de 3 o de 2-----}
+  areaEscaladores : AreaPC (5,52,40,61)
+  {------------------------------------------Escalera Repetir 2 o Repetir 3?---------------------}
+  areaE1 : AreaP (5,51,5,51)
+  areaE2 : AreaP (10,51,10,51)
+  areaE3 : AreaP (15,51,15,51)
+  areaE4 : AreaP (20,51,20,51)
+  area50 : AreaC (1,50,100,50)
+  areaEspecial : AreaC (1,100,1,100)
+{-------------------------------------------------------------------}
+robots
+  robot juez
+  variables
+    n:numero
+    tot1:numero
+    tot2:numero
+    tot3:numero
+    tot4:numero
+    id:numero
+    idMax:numero
+  comenzar
+    tot1:=0
+    tot2:=0
+    tot3:=0
+    tot4:=0
+    repetir 8
+      RecibirMensaje (id,*)
+      si (id=1)
+        RecibirMensaje (n,robotC1)
+        tot1:=tot1+n
+      sino 
+        si (id=2)
+          RecibirMensaje (n,robotC2)
+          tot2:=tot2+n
+        sino 
+          si (id=3)
+            RecibirMensaje (n,robotC3)
+            tot3:=tot3+n
+          sino 
+            si (id=4)
+              RecibirMensaje (n,robotC4)
+              tot4:=tot4+n  
+            sino
+              si (id=11)
+                RecibirMensaje (n,robotE1)
+                tot1:=tot1+n
+              sino 
+                si (id=22)
+                  RecibirMensaje (n,robotE2)
+                  tot2:=tot2+n
+                sino 
+                  si (id=33)
+                    RecibirMensaje (n,robotE3)
+                    tot3:=tot3+n
+                  sino 
+                    si (id=44)
+                      RecibirMensaje (n,robotE4)
+                      tot4:=tot4+n
+    Maximo (tot1,tot2,tot3,tot4,idMax) 
+    EnviarMensaje (idMax,robotC1) 
+    EnviarMensaje (idMax,robotC2)
+    EnviarMensaje (idMax,robotC3)
+    EnviarMensaje (idMax,robotC4)
+    EnviarMensaje (idMax,robotE1)
+    EnviarMensaje (idMax,robotE2)
+    EnviarMensaje (idMax,robotE3)
+    EnviarMensaje (idMax,robotE4)    
+  fin 
+  robot corredor1
+  variables
+    pap:numero
+    id:numero
+    miCa:numero
+    miAv:numero
+  comenzar
+    miCa:=PosCa
+    miAv:=PosAv
+    Carrera (pap,miCa)
+    EnviarMensaje (1,robotE1)
+    EnviarMensaje (1,robotJ)
+    EnviarMensaje (pap,robotJ)
+    RecibirMensaje (id,robotJ)
+    si (id=1)
+      Especial (miAv,miCa,1,pap)
+    sino 
+      COMUN (1,pap,miAv,miCa)
+    Pos (miAv,miCa)
+  fin
+  robot corredor2
+  variables
+    pap:numero
+    id:numero
+    miCa:numero
+    miAv:numero
+  comenzar
+    miCa:=PosCa
+    miAv:=PosAv
+    Carrera(pap,miCa)
+    EnviarMensaje (2,robotE2)
+    EnviarMensaje (2,robotJ)
+    EnviarMensaje (pap,robotJ)
+    RecibirMensaje (id,robotJ)
+    si (id=2)
+      Especial (miAv,miCa,1,pap)
+    sino 
+      COMUN (1,pap,miAv,miCa)
+    Pos (miAv,miCa)
+  fin
+  robot corredor3
+  variables
+    pap:numero
+    id:numero
+    miCa:numero
+    miAv:numero
+  comenzar
+    miCa:=PosCa
+    miAv:=PosAv
+    Carrera (pap,miCa)
+    EnviarMensaje(3,robotE3)
+    EnviarMensaje (3,robotJ)
+    EnviarMensaje (pap,robotJ)
+    RecibirMensaje (id,robotJ)
+    si (id=3)
+      Especial (miAv,miCa,1,pap)
+    sino 
+      COMUN (1,pap,miAv,miCa)
+    Pos (miAv,miCa)
+  fin
+  robot corredor4
+  variables
+    pap:numero
+    id:numero
+    miCa:numero
+    miAv:numero
+  comenzar
+    miCa:=PosCa
+    miAv:=PosAv
+    Carrera(pap,miCa)
+    EnviarMensaje (4,robotE4)
+    EnviarMensaje (4,robotJ)
+    EnviarMensaje (pap,robotJ)
+    RecibirMensaje (id,robotJ)
+    si (id=4)
+      Especial (miAv,miCa,1,pap)
+    sino 
+      COMUN (1,pap,miAv,miCa)
+    Pos (miAv,miCa)
+  fin
+  robot escalador1
+  variables
+    flor:numero
+    id:numero
+    miCa:numero
+    miAv:numero
+  comenzar
+    miCa:=PosCa
+    miAv:=PosAv
+    RecibirMensaje (id,robotC1)
+    Escalador (flor,miAv,miCa)
+    EnviarMensaje (11,robotJ)
+    EnviarMensaje (flor,robotJ)
+    RecibirMensaje (id,robotJ)
+    si (id=1)
+      Especial (miAv,miCa,2,flor)
+    sino 
+      COMUN (2,flor,miAv,miCa)
+    Pos(miAv,miCa)
+  fin
+  robot escalador2
+  variables
+    flor:numero
+    id:numero
+    miCa:numero
+    miAv:numero
+  comenzar
+    miCa:=PosCa
+    miAv:=PosAv
+    RecibirMensaje (id,robotC2)
+    Escalador (flor,miAv,miCa)
+    EnviarMensaje (22,robotJ)
+    EnviarMensaje (flor,robotJ)
+    RecibirMensaje (id,robotJ)
+    si (id=2)
+      Especial (miAv,miCa,2,flor)
+    sino 
+      COMUN (2,flor,miAv,miCa)
+    Pos(miAv,miCa)
+  fin
+  robot escalador3
+  variables
+    flor:numero
+    id:numero
+    miCa:numero
+    miAv:numero
+  comenzar
+    miCa:=PosCa
+    miAv:=PosAv
+    RecibirMensaje (id,robotC3)
+    Escalador (flor,miAv,miCa)
+    EnviarMensaje (33,robotJ)
+    EnviarMensaje (flor,robotJ)
+    RecibirMensaje (id,robotJ)
+    si (id=3)
+      Especial (miAv,miCa,2,flor)
+    sino 
+      COMUN (2,flor,miAv,miCa)
+    Pos (miAv,miCa)
+  fin
+  robot escalador4
+  variables
+    flor:numero
+    id:numero
+    miCa:numero
+    miAv:numero
+  comenzar
+    miCa:=PosCa
+    miAv:=PosAv
+    RecibirMensaje (id,robotC4)
+    Escalador (flor,miAv,miCa)
+    EnviarMensaje (44,robotJ)
+    EnviarMensaje (flor,robotJ)
+    RecibirMensaje (id,robotJ)
+    si (id=4)
+      Especial (miAv,miCa,2,flor)
+    sino 
+      COMUN (2,flor,miAv,miCa)
+    Pos(miAv,miCa)
+  fin
+{-------------------------------------------------------------------}
+variables
+  robotJ: juez
+  robotC1: corredor1
+  robotC2: corredor2
+  robotC3: corredor3
+  robotC4: corredor4
+  robotE1: escalador1
+  robotE2: escalador2
+  robotE3: escalador3
+  robotE4: escalador4
+comenzar
+  AsignarArea(robotJ,areaJuez)
+  AsignarArea(robotC1,areaC1)
+  AsignarArea(robotC2,areaC2)
+  AsignarArea(robotC3,areaC3)
+  AsignarArea(robotC4,areaC4)
+  AsignarArea(robotE1,areaE1)
+  AsignarArea(robotE1,areaEscaladores)
+  AsignarArea(robotE2,areaE2)
+  AsignarArea(robotE2,areaEscaladores) 
+  AsignarArea(robotE3,areaE3)
+  AsignarArea(robotE3,areaEscaladores)
+  AsignarArea(robotE4,areaE4)
+  AsignarArea(robotE4,areaEscaladores)
+  {-----------------------------------------No se si esto es correcto}
+  AsignarArea(robotC1,area50)
+  AsignarArea(robotC2,area50)
+  AsignarArea(robotC3,area50)
+  AsignarArea(robotC4,area50)
+  AsignarArea(robotE1,area50)
+  AsignarArea(robotE2,area50)
+  AsignarArea(robotE3,area50)
+  AsignarArea(robotE4,area50)
+  AsignarArea(robotC1,areaEspecial)
+  AsignarArea(robotC2,areaEspecial)
+  AsignarArea(robotC3,areaEspecial)
+  AsignarArea(robotC4,areaEspecial)
+  AsignarArea(robotE1,areaEspecial)
+  AsignarArea(robotE2,areaEspecial)
+  AsignarArea(robotE3,areaEspecial)
+  AsignarArea(robotE4,areaEspecial)
+  {----------------------------------------No se si esto es correcto}
+  Iniciar(robotJ,1,1)
+  Iniciar(robotC1,5,1)
+  Iniciar(robotC2,10,1)
+  Iniciar(robotC3,15,1)
+  Iniciar(robotC4,20,1)
+  Iniciar(robotE1,5,51)
+  Iniciar(robotE2,10,51)
+  Iniciar(robotE3,15,51)
+  Iniciar(robotE4,20,51)
+fin  
+
+
+
+
+
+
+
+
+

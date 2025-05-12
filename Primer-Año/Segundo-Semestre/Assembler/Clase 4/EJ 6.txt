@@ -1,0 +1,64 @@
+ORG 1000H 	; Datos
+    VALOR DW 21
+ORG 3000H  ; Subrutina
+
+DIV:
+    CMP AX,CX
+    JS CERO
+    PUSH BX
+    MOV BX,0
+SIGO:
+    SUB AX, CX
+    INC BX
+ 		CMP AX, CX
+ 		JNC SIGO 
+    ;                //  PARA MODIFICAR LOS PARAMETROS DE SALIDA  //
+    MOV CX,BX                    ; CX = RESULTADO   
+    ;MOV [REGISTRO],AX           ; AX = RESTO
+                    ;//-------------------------------------------//  
+  
+		POP BX
+		RET
+
+CERO:
+  MOV CX,0
+  RET
+
+;---------------------------------------------
+ES_IMPAR:
+    
+    PUSH BX      ; CONSERVO DATOS DE PROGRAMA
+    PUSH CX
+    
+    MOV BX, SP
+    ADD BX,6    ; RECUPERO DATO EN PILA
+    
+    MOV AX,[BX]
+		MOV CX, 2           
+    CALL DIV
+
+    CMP AX,0
+    JZ PAR
+    JMP IMPAR
+    
+    
+PAR:
+    MOV AX, 00H
+    POP CX
+    POP BX
+    RET
+IMPAR:
+    MOV AX,01H
+    POP CX
+    POP BX
+    RET
+;---------------------------------------------
+ORG 2000H   ; Programa Ppal.
+
+    MOV AX, VALOR
+    PUSH AX
+    CALL ES_IMPAR
+    POP CX ;BASURA 
+    
+    HLT
+    END

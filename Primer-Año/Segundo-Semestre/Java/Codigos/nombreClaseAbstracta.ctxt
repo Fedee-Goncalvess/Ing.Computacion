@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=nombreClaseAbstracta
+comment1.params=
+comment1.target=nombreClaseAbstracta()
+comment10.params=variableTipoBoolean2
+comment10.target=void\ setVariableTipoBoolean(boolean)
+comment11.params=
+comment11.target=void\ nombreMetodoAbstracto()
+comment2.params=variableTipoString2\ variableTipoInteger2\ variableTipoCharacter2\ variableTipoBoolean2
+comment2.target=nombreClaseAbstracta(java.lang.String,\ int,\ char,\ boolean)
+comment3.params=
+comment3.target=java.lang.String\ getVariableTipoString()
+comment4.params=
+comment4.target=int\ getVariableTipoInteger()
+comment5.params=
+comment5.target=char\ getVariableTipoCharacter()
+comment6.params=
+comment6.target=boolean\ getVariableTipoBoolean()
+comment7.params=variableTipoString2
+comment7.target=void\ setVariableTipoString(java.lang.String)
+comment8.params=variableTipoInteger2
+comment8.target=void\ setVariableTipoInteger(int)
+comment9.params=variableTipoCharacter2
+comment9.target=void\ setVariableTipoCharacter(char)
+numComments=12

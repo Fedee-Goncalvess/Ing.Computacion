@@ -1,0 +1,23 @@
+ORG 1000H
+CADENA DB "BALT ASS ARE SPAT A NEST%" ;//BALTAZAR PATANE
+RESULTADO DB 0
+ORG 3000H
+;------------------------------------------------------
+CONCAR:
+  MOV CL,0
+  MOV BX,AX
+LAZO:
+  CMP BYTE PTR [BX],'%'
+  JZ FINCADENA
+  INC CL
+  INC BX
+  JMP LAZO
+FINCADENA:
+  MOV RESULTADO, CL
+  RET
+;------------------------------------------------------
+ORG 2000H
+  MOV AX, OFFSET CADENA
+  CALL CONCAR
+  HLT 
+  END

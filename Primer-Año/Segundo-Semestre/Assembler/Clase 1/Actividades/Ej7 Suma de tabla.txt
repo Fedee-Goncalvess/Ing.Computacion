@@ -1,0 +1,21 @@
+       ORG 1000h
+tabla  DB 1,2,4,8,16,32
+i      DB 0
+iFin    DB 5
+
+       ORG 2000h
+       MOV AX, 0000;
+       MOV CX, 0   ;i=0
+       MOV DX, 6   ;i<6
+       MOV BX,1000h
+for:   CMP CX,DX   ;i<6
+       JZ fin      ;i=6 sale de bucle
+       
+       ADD AL,[BX] ;Suma a AL el valor de la direccion de memoria 
+
+       INC BX      ;Incrementa +1 la direccion de memoria
+       INC CX
+       JMP for     ;Vuelve al bucle 
+fin:   MOV tabla, AL ; Se almacena en memoria
+       HLT
+       END ;num final 63

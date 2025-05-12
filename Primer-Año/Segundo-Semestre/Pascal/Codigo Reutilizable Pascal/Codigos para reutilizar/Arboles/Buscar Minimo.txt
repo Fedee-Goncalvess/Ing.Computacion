@@ -1,0 +1,10 @@
+function vermin(a:arbol):integer;
+begin
+  if (a<>nil) and (a^.hijoI<>nil) then
+  begin
+    vermin:=vermin(a^.hijoI);
+  end
+  else
+    if a=nil then vermin:=-1
+    else vermin:= a^.elemento;
+end;

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="Parcial1.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="TPGrupoX"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="457"/>
+        <CursorPos Y="479"/>
+        <FoldState Value=" T4101 T3ie0J3 pjUkF05113111121 PjMmF0 T6od0503]g1mT]A21]b]VWm20p"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\..\..\..\Downloads\tpfinal.pas"/>
+        <UnitName Value="TPGrupoX"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="174"/>
+        <CursorPos X="5" Y="225"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\..\..\..\Downloads\TPGrupo18 4.pas"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="438"/>
+        <CursorPos X="28" Y="458"/>
+        <FoldState Value=" T3jB0K3 pjakM077 PiWj30="/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="29">
+      <Position>
+        <Filename Value="Parcial1.lpr"/>
+        <Caret Line="446" Column="62" TopLine="382"/>
+      </Position>
+      <Position>
+        <Filename Value="Parcial1.lpr"/>
+        <Caret Line="477" Column="15" TopLine="392"/>
+      </Position>
+      <Position>
+        <Filename Value="Parcial1.lpr"/>
+        <Caret Line="476" Column="17" TopLine="418"/>
+      </Position>
+      <Position>
+        <Filename Value="Parcial1.lpr"/>
+        <Caret Line="499" Column="27" TopLine="449"/>
+      </Position>
+      <Position>
+        <Filename Value="Parcial1.lpr"/>
+        <Caret Line="358" Column="11" TopLine="253"/>
+      </Position>
+      <Position>
+        <Filename Value="Parcial1.lpr"/>
+        <Caret Line="508" Column="9" TopLine="450"/>
+      </Position>
+      <Position>
+        <Filename Value="Parcial1.lpr"/>
+        <Caret Line="501" Column="27" TopLine="450"/>
+      </Position>
+      <Position>
+        <Filename Value="Parcial1.lpr"/>
+        <Caret Line="334" Column="13" TopLine="301"/>
+      </Position>
+      <Position>
+        <Filename Value="Parcial1.lpr"/>
+        <Caret Line="82" Column="28" TopLine="79"/>
+      </Position>
+      <Position>
+        <Filename Value="Parcial1.lpr"/>
+        <Caret Line="104" Column="32" TopLine="53"/>
+      </Position>
+      <Position>
+        <Filename Value="Parcial1.lpr"/>
+        <Caret Line="360" Column="56" TopLine="284"/>
+      </Position>
+      <Position>
+        <Filename Value="Parcial1.lpr"/>
+        <Caret Line="345" Column="8" TopLine="301"/>
+      </Position>
+      <Position>
+        <Filename Value="Parcial1.lpr"/>
+        <Caret Line="499" Column="21" TopLine="452"/>
+      </Position>
+      <Position>
+        <Filename Value="Parcial1.lpr"/>
+        <Caret Line="497" Column="23" TopLine="452"/>
+      </Position>
+      <Position>
+        <Filename Value="Parcial1.lpr"/>
+        <Caret Line="394" Column="39" TopLine="358"/>
+      </Position>
+      <Position>
+        <Filename Value="Parcial1.lpr"/>
+        <Caret Line="391" Column="34" TopLine="358"/>
+      </Position>
+      <Position>
+        <Filename Value="Parcial1.lpr"/>
+        <Caret Line="394" Column="73" TopLine="358"/>
+      </Position>
+      <Position>
+        <Filename Value="Parcial1.lpr"/>
+        <Caret Line="395" Column="40" TopLine="365"/>
+      </Position>
+      <Position>
+        <Filename Value="Parcial1.lpr"/>
+        <Caret Line="386" Column="24" TopLine="365"/>
+      </Position>
+      <Position>
+        <Filename Value="Parcial1.lpr"/>
+        <Caret Line="310" Column="43" TopLine="115"/>
+      </Position>
+      <Position>
+        <Filename Value="Parcial1.lpr"/>
+        <Caret Line="309" Column="24" TopLine="226"/>
+      </Position>
+      <Position>
+        <Filename Value="Parcial1.lpr"/>
+        <Caret Line="291" Column="4" TopLine="81"/>
+      </Position>
+      <Position>
+        <Filename Value="..\..\..\..\..\Downloads\TPGrupo18 4.pas"/>
+        <Caret Line="529" Column="8" TopLine="483"/>
+      </Position>
+      <Position>
+        <Filename Value="..\..\..\..\..\Downloads\TPGrupo18 4.pas"/>
+        <Caret Line="530" Column="8" TopLine="483"/>
+      </Position>
+      <Position>
+        <Filename Value="Parcial1.lpr"/>
+        <Caret Line="367" Column="12" TopLine="329"/>
+      </Position>
+      <Position>
+        <Filename Value="Parcial1.lpr"/>
+        <Caret Line="416" Column="47" TopLine="327"/>
+      </Position>
+      <Position>
+        <Filename Value="Parcial1.lpr"/>
+        <Caret Line="376" Column="9" TopLine="330"/>
+      </Position>
+      <Position>
+        <Filename Value="..\..\..\..\..\Downloads\TPGrupo18 4.pas"/>
+        <Caret Line="530" Column="12" TopLine="483"/>
+      </Position>
+      <Position>
+        <Filename Value="Parcial1.lpr"/>
+        <Caret Line="416" Column="41" TopLine="363"/>
+      </Position>
+      <Position>
+        <Filename Value="Parcial1.lpr"/>
+        <Caret Line="418" Column="34" TopLine="386"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+  <Debugging>
+    <BreakPoints>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="Parcial1.lpr"/>
+        <Line Value="479"/>
+      </Item>
+    </BreakPoints>
+  </Debugging>
+</CONFIG>

@@ -1,0 +1,24 @@
+;--------------------//SUBRUTINA//------------------------------------
+MULT:
+    PUSH BX      ; UTILIZO BX COMO RESULTADO
+    PUSH CX      ; GUARDO EL VALOR ORIGINAL EN PILA PARA NO PERDERLO
+    MOV BX,0     
+    
+SUMA: 
+    ADD BL,AL
+    DEC CL
+    CMP CL,0
+    JNZ SUMA
+    MOV AL,BL  ;// PARA CAMBIAR PARAMETRO DE SALIDA
+
+    POP CX
+    POP BX
+    
+    RET
+;---------------------------------------------------------------------
+;;--------------------//PROGRAMA PRINCIPAL//--------------------------
+;// MULTIPLICAR 2 NUMEROS // NUM1 > NUM2 // AX = RESULTADO // 
+    MOV AL, NUM1    
+    MOV CL, NUM2
+    CALL MULT   
+;--------------------------------------------------------------------- 
