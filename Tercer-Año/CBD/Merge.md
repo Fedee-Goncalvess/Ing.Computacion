@@ -4,6 +4,33 @@
 ---
 **Este algoritmo utiliza [[Leer]] y [[Mínimo]]
 # Resumen
+Dado n archivos detalle, se actualiza un archivo maestro  ordenado por un atributo específico.
+
+Se deben definir estos types:
+- Records de archivo Detalle y Maestro
+- Archivos de ambos records 
+- Array de archivo detalle 
+- Array de Records detalle
+
+La idea es, tener un array de los archivos detalle para poder buscar en estos. Lo ideal es sabiendo qué orden tiene el archivo maestro (ejemplo ordenado por número), buscamos en cada archivo detalle, el record con número más bajo y lo guardamos en un array del mismo tamaño que cantidad de archivos detalle. Este array funcionará de **buffer** para que nosotros actualicemos el archivo maestro en el orden que está este.
+N=5
+
+| d1    | d2    | d3    | d4    | d5    |
+| ----- | ----- | ----- | ----- | ----- |
+| R1-08 | R2-01 | R3-15 | R4-03 | R5-09 |
+Queremos actualizar el archivo maestro -> Buscamos el record con número bajo en el array
+(R2-01). Lo actualizamos en el maestro, y luego debemos encontrar el siguiente record con número bajo de ese mismo archivo detalle.
+
+| d1    | d2    | d3    | d4    | d5    |
+| ----- | ----- | ----- | ----- | ----- |
+| R1-08 | R2-05 | R3-15 | R4-03 | R5-09 |
+Repetimos buscando en el array el record con número bajo (R4-03)
+
+
+| d1    | d2    | d3    | d4      | d5    |
+| ----- | ----- | ----- | ------- | ----- |
+| R1-08 | R2-01 | R3-15 | **EOF** | R5-09 |
+Hacemos esto hasta que terminemos todos los archivos detalle
 
 ---
 # Desarrollo del Código
