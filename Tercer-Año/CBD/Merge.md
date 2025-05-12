@@ -33,6 +33,51 @@ Repetimos buscando en el array el record con número bajo (R4-03)
 Hacemos esto hasta que terminemos todos los archivos detalle
 
 ---
+
+## 🔹 **Pseudocódigo para un Merge Generalizado**
+
+### **1️⃣ Inicialización:**
+
+- Abrir el archivo maestro en modo lectura/escritura *(reset)*.
+- Abrir los archivos detalle en modo lectura.
+- Crear un array para almacenar los registros actuales de cada archivo detalle.
+- Leer el primer registro de cada archivo detalle.
+
+### **2️⃣ Encontrar el mínimo:**
+
+- Definir una función `ObtenerMinimo` para identificar el registro de detalle con el menor valor de la clave (ej: `codEmpleado`).    
+- Actualizar el array de registros con el próximo valor del archivo correspondiente al mínimo.
+
+### **3️⃣ Proceso de actualización:**
+
+- Mientras el mínimo obtenido sea distinto de un valor máximo definido (`VALOR_ALTO`):
+    
+    - Leer el siguiente registro del archivo maestro.
+    - Si el código del maestro es menor al código del mínimo:
+        - Escribir el registro del maestro en el archivo.
+        - Leer el siguiente registro del maestro.
+    - Si los códigos coinciden:
+        - Inicializar un acumulador para los valores que se desean actualizar (ej: `diasSolicitados`).
+        - Mientras los códigos coincidan, acumular el valor y llamar a `ObtenerMinimo` para el siguiente registro.
+        - Si el valor en el maestro permite la actualización:
+            - Actualizar el maestro con el valor acumulado.
+        - En caso contrario:
+            - Registrar el error o rechazo en un archivo de log (ej: `rechazados.txt`).
+        - Escribir el registro actualizado en el archivo maestro.
+
+### **4️⃣ Cierre de archivos:**
+
+- Cerrar el archivo maestro.
+- Cerrar los archivos detalle.
+- Cerrar el archivo de log de rechazos si se generó.
+
+### **5️⃣ Funciones auxiliares:**
+
+- **Leer:** Lee un registro del archivo, si es fin de archivo, asigna un valor máximo a la clave.
+- **ObtenerMinimo:** Busca el registro con menor valor de clave entre los registros actuales de los detalles y actualiza ese índice con un nuevo valor del archivo correspondiente.
+
+---
+
 # Desarrollo del Código
 ## Declaración Type, variables y constantes
 - Se define ``valor_alto`` para especificar cuando se termina un archivo.
