@@ -15,6 +15,7 @@ var
 begin
   posMin := 1;
   min := rdet[1];
+  
   for i := 2 to 3 do
   begin
     if (rdet[i].codigo < min.codigo) then
